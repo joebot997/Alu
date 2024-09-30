@@ -1,7 +1,16 @@
----
+--- 
 import LoadingSpinner from "@components/LoadingSpinner.astro";
 
 export const prerender = false;
+
+export async function getStaticPaths() {
+  // Replace this with your actual dynamic paths
+  return [
+    { params: { game: 'game1' } },
+    { params: { game: 'game2' } },
+    // Add more game paths as needed
+  ];
+}
 ---
 
 <!doctype html>
