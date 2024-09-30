@@ -1,9 +1,6 @@
 import { defineConfig } from "astro/config";
-import node from "@astrojs/node";
 import sitemap from "@inox-tools/sitemap-ext";
 
-// Check if node is running in production mode
-// const prodBuild = process.env.NODE_ENV === "production";
 const prodBuild = true;
 
 const site = prodBuild ? "https://aluu.xyz" : "http://localhost:3000";
@@ -11,15 +8,12 @@ const site = prodBuild ? "https://aluu.xyz" : "http://localhost:3000";
 export default defineConfig({
   site: site,
   integrations: [
-		sitemap({
-			includeByDefault: true,
+    sitemap({
+      includeByDefault: true,
       lastmod: new Date(),
-		}),
+    }),
   ],
-  output: "server",
-  adapter: node({
-    mode: "middleware",
-  }),
+  output: "static", // Change from 'server' to 'static'
   vite: {
     server: {
       watch: {
