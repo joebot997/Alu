@@ -13,7 +13,7 @@ export default defineConfig({
       lastmod: new Date(),
     }),
   ],
-  output: "static", // Change from 'server' to 'static'
+  output: "hybrid", // Change from 'server' to 'static'
   vite: {
     server: {
       watch: {
